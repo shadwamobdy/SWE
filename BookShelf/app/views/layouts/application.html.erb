@@ -22,7 +22,7 @@
 	    	    <div>
 	        	    <ul class="nav pull-right", style="padding: 15px 15px">
 	        	    	<%# if !(user_signed_in?) %>
-		            	    <button class="button">
+		            	    <button class="button" onclick="showLoginForm()">
 		            	    	login as admin
 		            	    </button>
 	            	</ul>
@@ -30,8 +30,9 @@
 	    	</div>
 		</nav>
 </head>
-<body>
 
+<body>
+  
 <%= yield %>
 
 </body>
