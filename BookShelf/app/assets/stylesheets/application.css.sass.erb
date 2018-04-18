@@ -1,0 +1,517 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any styles
+ * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
+ * file per style scope.
+ *= require bootstrap-datetimepicker
+ *= require_tree .
+ *= require_self
+ *= require select2
+ *= require font-awesome
+ *= require fullcalendar
+ *= require jquery.fileupload
+ *= require jquery.fileupload-ui
+ *= require select2
+ *= require select2-bootstrap
+ *
+ */
+
+@import "bootstrap-sprockets"
+@import "bootstrap"
+@import "bootstrap-datetimepicker"
+@import font-awesome
+@import 'bootstrap/glyphicons'
+
+#search
+  height: 6px
+  border-box: box-sizing
+  background-image: url(<%= asset_path 'searchicon.png' %>)
+  background-position: 8px 6px
+  background-repeat: no-repeat
+  font-size: 16px
+  padding: 14px 20px 12px 45px
+  border: none
+  float: left
+
+input
+  &[type=text]
+    width: 200px
+    height: 20px
+    -webkit-transition: width 0.4s ease-in-out
+    transition: width 0.4s ease-in-out
+    &:focus
+      width: 50%
+  &[type="submit"]
+    font-size: 100%
+    height: 25px
+    width: 90px
+    color: darkorange
+    background: transparent
+    border-color: darkorange
+
+
+.button__badge
+  background-color: #fa3e3e
+  border-radius: 2px
+  color: white
+  padding: 1px 3px
+  font-size: 10px
+  position: absolute
+  /* Position the badge within the relatively positioned button
+  top: 0
+  right: 0
+
+.button
+  color: white
+  background-color: transparent
+  border: 2px solid transparent
+  cursor: pointer
+  display: inline-block
+  /* Inline elements with width and height. TL;DR they make the icon buttons stack from left-to-right instead of top-to-bottom
+  position: relative
+  /* All 'absolute'ly positioned elements are relative to this one
+  padding: 2px 5px
+  /* Add some padding so it looks nice
+
+.button:hover
+  border: 2px solid white
+  border-radius: 10px
+
+body, html
+  height: 100%
+
+/* remove outer padding
+
+.main .row
+  padding: 0px
+  margin: 0px
+
+/*Remove rounded coners
+
+nav.sidebar
+  &.navbar
+    border-top: none
+    border-color: white
+    background-color: white
+  -webkit-transition: margin 200ms ease-out
+  -moz-transition: margin 200ms ease-out
+  -o-transition: margin 200ms ease-out
+  transition: margin 200ms ease-out
+
+.main
+  -webkit-transition: margin 200ms ease-out
+  -moz-transition: margin 200ms ease-out
+  -o-transition: margin 200ms ease-out
+  transition: margin 200ms ease-out
+  padding: 10px 10px 0 10px
+
+/* Add gap to nav and right windows.
+
+/* .....NavBar: Icon only with coloring/layout.....
+
+/*small/medium side display
+@media (min-width: 768px)
+  /*Allow main to be next to Nav
+  .main
+    position: absolute
+    width: calc(100% - 200px)
+    /*keeps 100% minus nav size
+    margin-left: 40px
+    float: right
+  /*lets nav bar to be showed on mouseover
+  nav.sidebar
+    &:hover + .main
+      width: 200px
+    &.navbar.sidebar > .container .navbar-brand
+      margin-left: 0px
+  /*Center Brand
+  .navbar > .container-fluid .navbar-brand
+    margin-left: 0px
+  /*Center Brand
+  nav.sidebar
+    .navbar-brand, .navbar-header
+      text-align: center
+      width: 100%
+      margin-left: 0px
+    a
+      padding-right: 13px
+    .navbar-nav
+      > li
+        &:first-child
+          border-top: 1px #5dbef2 solid
+        border-bottom: 1px #5dbef2 solid
+        border-right: 1px #5dbef2 solid
+        border-radius: 5px
+      .open .dropdown-menu
+        position: static
+        float: none
+        width: auto
+        margin-top: 0
+        background-color: transparent
+        border: 0
+        -webkit-box-shadow: none
+        box-shadow: none
+    .navbar-collapse, .container-fluid
+      padding: 0 0px 0 0px
+  /*Center Icons
+  /*adds border top to first nav box
+  /*adds border to bottom nav boxes
+  /* Colors/style dropdown box
+  /*allows nav box to use 100% width
+  /*colors dropdown box text
+  .navbar-inverse .navbar-nav .open .dropdown-menu > li > a
+    color: #777
+  /*gives sidebar width/height
+  nav.sidebar
+    width: 200px
+    height: 100%
+    margin-left: -160px
+    float: left
+    z-index: 8000
+    margin-bottom: 0px
+    li
+      width: 100%
+    &:hover
+      margin-left: 0px
+      color: #5dbef2
+  /*give sidebar 100% width;
+  /* Move nav to full on mouse over
+  /*for hiden things when navbar hidden
+  .forAnimate
+    opacity: 0
+
+/* .....NavBar: Fully showing nav bar.....
+
+@media (min-width: 1330px)
+  /*Allow main to be next to Nav
+  .main
+    width: calc(100% - 200px)
+    /*keeps 100% minus nav size
+    margin-left: 200px
+  /*Show all nav
+  nav.sidebar
+    margin-left: 0px
+    float: left
+    .forAnimate
+      opacity: 1
+  /*Show hidden items on nav
+
+nav
+  &.sidebar .navbar-nav .open .dropdown-menu > li > a
+    &:hover, &:focus
+      color: #5dbef2
+      background-color: transparent
+  &:hover .forAnimate
+    opacity: 1
+  
+
+nav
+  &.sidebar .navbar-nav .open .dropdown-menu > li
+  .selected > a
+    color: #5dbef2  !important
+
+
+section
+  padding-left: 15px
+
+.navbar-inverse .navbar-nav > li > a
+  &:hover, &:focus
+    color: #5dbef2
+
+.navbar-inverse .navbar-nav > .open > a,
+.navbar-inverse .navbar-nav > .open > a:hover,
+.navbar-inverse .navbar-nav > .open > a:focus
+  background-color: #5dbef2
+
+.navbar-inverse .navbar-nav > .active > a,
+.navbar-inverse .navbar-nav > .active > a:hover,
+.navbar-inverse .navbar-nav > .active > a:focus
+    color: #fff
+    background-color: #5dbef2
+
+.dropdown-notify-content
+  overflow: none
+  background: linear-gradient(to bottom, #6699ff -1000%, #f9f9f9 95%)
+  background-repeat: no-repeat
+  background-attachment: fixed
+  border-radius: 5px
+  position: absolute
+  min-width: 400px
+  right: 80px
+  top: 50px
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2)
+  z-index: 1
+  float: none
+  color: black
+  padding: 12px 16px
+  text-decoration: none
+  display: none
+  text-align: left
+  a
+    float: none
+    color: black
+    padding: 12px 16px
+    text-decoration: none
+    display: block
+    text-align: left
+    &:hover
+      background-color: #e3e3e3
+      border-radius: 10px
+
+.show-notify
+  display: block
+
+.dropdown-notify-content
+  &:before
+    bottom: 99%
+    left: 102%
+    border: solid transparent
+    border-radius: 5px
+    content: " "
+    height: 0
+    width: 0
+    position: absolute
+    pointer-events: none
+  &:before
+    border-color: rgba(194, 225, 245, 0)
+    border-bottom-color: #eef2f9
+    border-width: 9px
+    margin-left: -36px
+
+.navbar-inverse .navbar-toggle
+  &:hover, &:focus
+    background-color: #5dbef2
+    border-color: white
+
+.navbar-inverse .navbar-toggle
+    background-color: #5dbef2
+    border-color: white
+
+.navbar-inverse .navbar-collapse, .navbar-inverse .navbar-form
+    border-color: #5dbef2
+
+/* Modal Content
+
+.modal-content
+  background-color: rgba(255, 255, 255, 0.8)
+  margin: auto
+  padding: 20px
+  border: none
+  width: 80%
+  text-align: left
+  padding-left: 70px
+  z-index: 9999
+/* The Close Button
+
+.close
+  color: gray
+  float: right
+  width: 23px
+  height: 23px
+  font-size: 21px
+  font-weight: bold
+  &:hover, &:focus
+    color: black
+    text-decoration: none
+    cursor: pointer
+
+.modal
+  display: none
+  /* Hidden by default
+  position: fixed
+  /* Stay in place
+  z-index: 1
+  /* Sit on top
+  padding-top: 100px
+  /* Location of the box
+  left: 0
+  top: 0
+  width: 100%
+  /* Full width
+  height: 100%
+  /* Full height
+  overflow: auto
+  /* Enable scroll if needed
+  color: black
+  border: none
+  background-color: rgba(230, 222, 214, 0.72)
+
+a:hover
+  background-color: transparent
+
+.mytextdiv
+  margin: 0px 30px
+  margin-top: 30px
+  display: flex
+  flex-direction: row
+  align-items: center
+  width: 88%
+
+.mytexttitle
+  vertical-align: middle
+  margin-bottom: 9px
+  flex-grow: 0
+  width: 150px
+  color: gray
+
+.divider
+  border-bottom: 1px solid #e7e7e7
+  line-height: 0.1em
+  flex-grow: 1
+  border-radius: 20px
+  height: 1px
+
+.request
+  width: 1000px
+  height: 70px
+  padding: 15px 15px
+  margin: 2px 100px
+  border-radius: 20px
+  cursor: pointer
+  &:hover
+    background-color: rgba(231, 231, 231, 0.5)
+
+.btn
+  content: asset-url
+
+.select2-container--bootstrap
+  .select2-selection--single
+    width: 250px
+  .select2-dropdown--above
+    margin-top: 100px
+    width: 250px
+
+.btn-circle
+  width: 50px
+  height: 50px
+  text-align: center
+  padding: 10px 16px
+  font-size: 18px
+  line-height: 1.33
+  border-radius: 25px
+  background-color: #CCCCCC
+  border-color: #CCCCCC
+  margin-left: 450px
+
+.btn-danger
+  &:hover
+    background-color: lightskyblue
+    border-color: lightskyblue
+    background-color: lightskyblue
+    border-color: lightskyblue
+  &:focus, &:active, &.active
+    background-color: lightskyblue
+    border-color: lightskyblue
+
+.open > .btn-danger.dropdown-toggle
+  background-color: lightskyblue
+  border-color: lightskyblue
+
+.imgcontainer
+  position: relative
+  width: 200px
+  height: 250px
+
+.overlay
+  position: absolute
+  top: 204px
+  left: 0
+  width: 200px
+  height: 46px
+  background: rgba(0, 0, 0, 0)
+  transition: background 0.5s ease
+
+.imgcontainer:hover .overlay
+  display: block
+  background: rgba(0, 0, 0, 0.2)
+
+.img
+  position: absolute
+  width: 200px
+  height: 250px
+  left: 0
+
+.imgbutton
+  position: absolute
+  width: 200px
+  left: 0px
+  top: 201px
+  text-align: center
+  opacity: 0
+
+.aa
+  width: 200px
+  padding: 14px 22px
+  text-align: center
+  color: white
+  border: solid 2px white
+  z-index: 1
+  text-decoration: none
+  background: rgba(0, 0, 0, 0.2)
+  transition: opacity .35s ease
+  &:hover
+    background: rgba(0, 0, 0, 0.7)
+
+.imgcontainer:hover .imgbutton
+  opacity: 1
+
+a:hover
+  background-color: transparent
+
+.animateaccept
+  background-color: #5dbef2
+  outline: none
+  border-radius: 5px
+  border-color: transparent
+  color: white
+  font-size: 15pt
+  padding: 5px 15px
+  transition: all 0.3s
+  span
+    cursor: pointer
+    display: inline-block
+    position: relative
+    transition: 0.3s
+    &:after
+      position: absolute
+      opacity: 0
+      top: 0
+      right: -20px
+      transition: 0.3s
+  &:hover span
+    padding-right: 5px
+    &:after
+      opacity: 1
+      right: 0
+
+.animatereject
+  background-color: transparent
+  outline: none
+  border-radius: 5px
+  border-color: #5dbef2
+  color: #5dbef2
+  font-size: 15pt
+  padding: 5px 15px
+  border-style: solid
+  span
+    cursor: pointer
+    display: inline-block
+    position: relative
+    transition: 0.3s
+    &:after
+      position: absolute
+      opacity: 0
+      top: 0
+      right: -20px
+      transition: 0.3s
+  &:hover span
+    padding-right: 5px
+    &:after
+      opacity: 1
+      right: 0
