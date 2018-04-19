@@ -12,8 +12,15 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require select2-full
+//= require bootstrap-sprockets
+//= require bootstrap-datetimepicker
 //= require turbolinks
 //= require_tree .
+//= require moment 
+//= require fullcalendar
+//= require jquery-fileupload
+//= require select2-full
 
 $(function() {
     $('form').each(function() {
