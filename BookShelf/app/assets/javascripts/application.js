@@ -22,6 +22,7 @@
 //= require jquery-fileupload
 //= require select2-full
 
+
 $(function() {
     $('form').each(function() {
         $(this).find('input').keypress(function(e) {
@@ -34,6 +35,14 @@ $(function() {
         });
     });
 });
+
+window.onclick = function(e) {
+    var logIn = document.getElementById('loginContent');
+    var logInBtn = document.getElementById('logInBtn');
+    if ((logIn != null) && (e.target != logIn) && (e.target.parentElement != logIn) && (e.target != logInBtn)) {
+        document.getElementById('loginForm').style.display = "none";
+    }   
+}
 
 function showLoginForm(){
   document.getElementById("loginForm").style.display = "block";

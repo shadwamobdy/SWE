@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
   get 'home/index'
-
+  get 'newBook' => 'book#new'
+  get 'editBook' => 'book#edit'
+  get 'book' => 'book#show'
   root 'home#index'
 
   # The priority is based upon order of creation: first created -> highest priority.

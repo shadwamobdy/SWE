@@ -17,12 +17,12 @@
 	            	</div>
 		        </div>
 		        <%= form_tag("/home/search", method: "get") do %>
-					<input type="text" placeholder="Search.." id="search" name="search" required="true" style="margin: 15px 100px;">
+					<input type="text" placeholder="Search.." id="search" class="search" name="search" required="true" style="margin: 15px 100px;">
 			  	<% end %>
 	    	    <div>
 	        	    <ul class="nav pull-right", style="padding: 15px 15px">
 	        	    	<%# if !(user_signed_in?) %>
-		            	    <button class="button" onclick="showLoginForm()">
+		            	    <button id="logInBtn" class="button" onclick="showLoginForm()">
 		            	    	login as admin
 		            	    </button>
 	            	</ul>
