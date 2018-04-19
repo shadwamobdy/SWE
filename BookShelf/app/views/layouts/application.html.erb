@@ -21,10 +21,18 @@
 			  	<% end %>
 	    	    <div>
 	        	    <ul class="nav pull-right", style="padding: 15px 15px">
-	        	    	<%# if !(user_signed_in?) %>
+	        	    	<% if !(@admin) %>
 		            	    <button id="logInBtn" class="button" onclick="showLoginForm()">
 		            	    	login as admin
 		            	    </button>
+		            	<% else %>
+		            		<div class="dropdown">
+						    	<button class="dropbtn" onclick="showDropdown()">Admin Name</button>
+						    	<div class="dropdown-content" id="myDropdown">
+						      		<button class="dropbtn">log out</button">
+						    	</div>
+						  	</div>
+		            	<% end %>
 	            	</ul>
 	        	</div>
 	    	</div>

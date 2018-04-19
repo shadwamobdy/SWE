@@ -41,13 +41,41 @@ window.onclick = function(e) {
     var logInBtn = document.getElementById('logInBtn');
     if ((logIn != null) && (e.target != logIn) && (e.target.parentElement != logIn) && (e.target != logInBtn)) {
         document.getElementById('loginForm').style.display = "none";
-    }   
+    }
+    var bookDetails = document.getElementById('viewBookContent');
+    var viewBookBtn1 = document.getElementById('viewBookBtn1');
+    var viewBookBtn2 = document.getElementById('viewBookBtn2');
+    if ((bookDetails != null) && (e.target != bookDetails) && (e.target.parentElement != bookDetails) 
+        && (e.target != viewBookBtn1) && (e.target != viewBookBtn2)) {
+        document.getElementById('viewBook').style.display = "none";
+    }
 }
 
-function showLoginForm(){
-  document.getElementById("loginForm").style.display = "block";
+function showLoginForm() {
+    document.getElementById("loginForm").style.display = "block";
 }
 
-function hideLoginForm(){
+function hideLoginForm() {
   document.getElementById("loginForm").style.display = "none";
+}
+
+function showBook() {
+    document.getElementById("viewBook").style.display = "block";
+}
+
+function hideBook() {
+    document.getElementById("viewBook").style.display = "none";
+}
+
+function showAddBook() {
+    document.getElementById("addBook").style.display = "block";
+}
+
+function hideAddBook() {
+    document.getElementById("addBook").style.display = "none";
+}
+
+function showDropdown() {
+    alert("hopaaaaaaaaaaa");
+    document.getElementById("myDropdown").style.display = "block";
 }

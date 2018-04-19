@@ -1,122 +1,37 @@
-<style>
-	.titlebox{
-		float:left;
-		padding:0 5px;
-		margin:-310px 0 0 0px;
-		background:#fff;
-	}
-</style>
-
-<div align="center" class="mytextdiv" style="width: 1080px;">
-  	<div class="titlebox">
-  		<i style="font-size:16px; margin: 0px 5px; border: 1px solid #e7e7e7; padding: 5px 5px; border-radius: 5px;" class="fa fa-paint-brush" aria-hidden="true"></i>
-    	Art  
-  	</div>
-  	<div style="margin: 0px 10px;">
-  		<img style="border-radius: 10px; border: 2px solid #a1a4a8;" src=<%= asset_path 'book.png' %>>
-  		<p align="center">Book Title</p>
-  	</div>
-  	<div style="margin: 0px 10px;">
-  		<img style="border-radius: 10px; border: 2px solid #a1a4a8;" src=<%= asset_path 'book.png' %>>
-  		<p align="center">Book Title</p>
-  	</div>
-  	<div style="margin: 0px 10px;">
-  		<img style="border-radius: 10px; border: 2px solid #a1a4a8;" src=<%= asset_path 'book.png' %>>
-  		<p align="center">Book Title</p>
-  	</div>
-  	<div style="margin: 0px 10px;">
-  		<img style="border-radius: 10px; border: 2px solid #a1a4a8;" src=<%= asset_path 'book.png' %>>
-  		<p align="center">Book Title</p>
-  	</div>
-  	<div style="margin: 0px 10px;">
-  		<img style="border-radius: 10px; border: 2px solid #a1a4a8;" src=<%= asset_path 'book.png' %>>
-  		<p align="center">Book Title</p>
-  	</div>
-
-</div>
-
-<div align="center" class="mytextdiv" style="width: 1080px;">
-  	<div class="titlebox">
-  		<i style="font-size:16px; margin: 0px 5px; border: 1px solid #e7e7e7; padding: 5px 5px; border-radius: 5px;" class="fa fa-futbol-o" aria-hidden="true"></i>
-    	Sport
-  	</div>
-  	<div style="margin: 0px 10px;">
-  		<img style="border-radius: 10px; border: 2px solid #a1a4a8;" src=<%= asset_path 'book.png' %>>
-  		<p align="center">Book Title</p>
-  	</div>
-  	<div style="margin: 0px 10px;">
-  		<img style="border-radius: 10px; border: 2px solid #a1a4a8;" src=<%= asset_path 'book.png' %>>
-  		<p align="center">Book Title</p>
-  	</div>
-  	<div style="margin: 0px 10px;">
-  		<img style="border-radius: 10px; border: 2px solid #a1a4a8;" src=<%= asset_path 'book.png' %>>
-  		<p align="center">Book Title</p>
-  	</div>
-  	<div style="margin: 0px 10px;">
-  		<img style="border-radius: 10px; border: 2px solid #a1a4a8;" src=<%= asset_path 'book.png' %>>
-  		<p align="center">Book Title</p>
-  	</div>
-  	<div style="margin: 0px 10px;">
-  		<img style="border-radius: 10px; border: 2px solid #a1a4a8;" src=<%= asset_path 'book.png' %>>
-  		<p align="center">Book Title</p>
-  	</div>
-</div>
-
-<div align="center" class="mytextdiv" style="width: 1080px;">
-  	<div class="titlebox">
-  		<i style="font-size:16px; margin: 0px 5px; border: 1px solid #e7e7e7; padding: 5px 5px; border-radius: 5px;" class="fa fa-briefcase" aria-hidden="true"></i>
-    	Business
-  	</div>
-  	<div style="margin: 0px 10px;">
-  		<img style="border-radius: 10px; border: 2px solid #a1a4a8;" src=<%= asset_path 'book.png' %>>
-  		<p align="center">Book Title</p>
-  	</div>
-  	<div style="margin: 0px 10px;">
-  		<img style="border-radius: 10px; border: 2px solid #a1a4a8;" src=<%= asset_path 'book.png' %>>
-  		<p align="center">Book Title</p>
-  	</div>
-  	<div style="margin: 0px 10px;">
-  		<img style="border-radius: 10px; border: 2px solid #a1a4a8;" src=<%= asset_path 'book.png' %>>
-  		<p align="center">Book Title</p>
-  	</div>
-  	<div style="margin: 0px 10px;">
-  		<img style="border-radius: 10px; border: 2px solid #a1a4a8;" src=<%= asset_path 'book.png' %>>
-  		<p align="center">Book Title</p>
-  	</div>
-  	<div style="margin: 0px 10px;">
-  		<img style="border-radius: 10px; border: 2px solid #a1a4a8;" src=<%= asset_path 'book.png' %>>
-  		<p align="center">Book Title</p>
-  	</div>
-</div>
+<%= render "shared/form_home" %>
 
 <div class="modal" id="loginForm">
 <!-- Modal content -->
-  <div class="modal-content" id="loginContent">
+  	<div class="modal-content" id="loginContent">
+	    <span class="close" onclick="hideLoginForm()">
+	      	&times;
+	    </span>
+      	<div class="loginFormContainer">
+	        <div>
+	          	<label for="uname" style="color: #585858"><b>Username</b></label>
+	        </div>
+	        <input class="loginInput" type="text" placeholder="Enter Username" name="uname" required>
+	        <div>
+	          	<label for="psw" style="color: #585858"><b>Password</b></label>
+	        </div>
+    		<input class="loginInput" type="password" placeholder="Enter Password" name="psw" required>
+	        <div class="loginWrapper">
+	          	<input type="checkbox" checked="checked" name="remember" class="checkBox">
+	          	<label for="remember" style="color: #585858"> Remember me </label>
+	        </div>
+	        <div class="loginWrapper" >
+	          	<button class="button loginButton" type="submit">Login</button>
+	        </div>
+      	</div>
+  	</div>
+</div>
 
-    <span class="close" onclick="hideLoginForm()">
-      &times;
-    </span>
-
-      <div class="loginFormContainer">
-        <div>
-          <label for="uname" style="color: #585858"><b>Username</b></label>
-        </div>
-        <input class="loginInput" type="text" placeholder="Enter Username" name="uname" required>
-
-        <div>
-          <label for="psw" style="color: #585858"><b>Password</b></label>
-        </div>
-        <input class="loginInput" type="password" placeholder="Enter Password" name="psw" required>
-
-        <div class="loginWrapper">
-          <input type="checkbox" checked="checked" name="remember" class="checkBox">
-          <label for="remember" style="color: #585858"> Remember me </label>
-        </div>
-
-        <div class="loginWrapper" >
-          <button class="button loginButton" type="submit">Login</button>
-        </div>
-      </div>
-
-  </div>
+<div class="modal" id="viewBook">
+<!-- Modal content -->
+  	<div class="modal-book-content" id="viewBookContent">
+    	<span class="close" onclick="hideBook()">
+      		&times;
+    	</span>
+    	<%= render "shared/form_show_book" %>
+  	</div>
 </div>

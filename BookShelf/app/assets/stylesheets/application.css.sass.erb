@@ -72,6 +72,7 @@ input
   background-color: transparent
   border: 2px solid transparent
   cursor: pointer
+  outline: 0
   display: inline-block
   /* Inline elements with width and height. TL;DR they make the icon buttons stack from left-to-right instead of top-to-bottom
   position: relative
@@ -298,6 +299,19 @@ section
 
 /* Modal Content
 
+.modal
+  display: none
+  position: fixed
+  z-index: 1
+  padding-top: 100px
+  left: 0
+  top: 0
+  width: 100%
+  height: 100%
+  overflow: auto
+  border: none
+  background-color: rgba(230, 222, 214, 0.72)
+
 .modal-content
   background-color: rgba(255, 255, 255, 0.8)
   margin: auto
@@ -306,6 +320,29 @@ section
   width: 30%
   text-align: left
   z-index: 9999
+
+.modal-book-content
+  background-color: rgba(255, 255, 255, 0.8)
+  margin: auto
+  padding: 20px
+  border: none
+  width: 90%
+  text-align: left
+  z-index: 9999
+
+.modal-add-book
+  display: none
+  position: fixed
+  z-index: 1
+  padding-top: 40px
+  left: 0
+  top: 0
+  width: 100%
+  height: 100%
+  overflow: auto
+  border: none
+  background-color: rgba(230, 222, 214, 0.72)
+
 /* The Close Button
 
 .close
@@ -319,30 +356,6 @@ section
     color: black
     text-decoration: none
     cursor: pointer
-
-.modal
-  display: none
-  /* Hidden by default
-  position: fixed
-  /* Stay in place
-  z-index: 1
-  /* Sit on top
-  padding-top: 100px
-  /* Location of the box
-  left: 0
-  top: 0
-  width: 100%
-  /* Full width
-  height: 100%
-  /* Full height
-  overflow: auto
-  /* Enable scroll if needed
-  color: black
-  border: none
-  background-color: rgba(230, 222, 214, 0.72)
-
-a:hover
-  background-color: transparent
 
 .mytextdiv
   margin: 0px 90px
@@ -403,68 +416,21 @@ a:hover
 
 .btn-danger
   &:hover
-    background-color: lightskyblue
-    border-color: lightskyblue
-    background-color: lightskyblue
-    border-color: lightskyblue
+    background-color: #0068CB
+    border-color: #0068CB
   &:focus, &:active, &.active
-    background-color: lightskyblue
-    border-color: lightskyblue
+    background-color: #0068CB
+    border-color: #0068CB
 
 .open > .btn-danger.dropdown-toggle
   background-color: lightskyblue
   border-color: lightskyblue
 
-.imgcontainer
-  position: relative
-  width: 200px
-  height: 250px
-
-.overlay
-  position: absolute
-  top: 204px
-  left: 0
-  width: 200px
-  height: 46px
-  background: rgba(0, 0, 0, 0)
-  transition: background 0.5s ease
-
-.imgcontainer:hover .overlay
-  display: block
-  background: rgba(0, 0, 0, 0.2)
-
 .img
   position: absolute
-  width: 200px
+  width: 180px
   height: 250px
   left: 0
-
-.imgbutton
-  position: absolute
-  width: 200px
-  left: 0px
-  top: 201px
-  text-align: center
-  opacity: 0
-
-.aa
-  width: 200px
-  padding: 14px 22px
-  text-align: center
-  color: white
-  border: solid 2px white
-  z-index: 1
-  text-decoration: none
-  background: rgba(0, 0, 0, 0.2)
-  transition: opacity .35s ease
-  &:hover
-    background: rgba(0, 0, 0, 0.7)
-
-.imgcontainer:hover .imgbutton
-  opacity: 1
-
-a:hover
-  background-color: transparent
 
 .animateaccept
   background-color: #5dbef2
@@ -552,3 +518,92 @@ a:hover
 
 .loginFormContainer
   padding: 16px
+
+
+.imgcontainer
+  position: relative
+  width: 180px
+  margin: 0px 2px
+  height: 230px
+  border-radius: 10px
+  border: 2px solid #a1a4a8
+
+.overlay
+  position: absolute
+  top: 204px
+  border-radius: 10px
+  left: 0
+  width: 180px
+  height: 46px
+  background: rgba(0, 0, 0, 0)
+  transition: background 0.5s ease
+
+.imgcontainer:hover .overlay
+  display: block
+  background: rgba(0, 0, 0, 0.2)
+
+.imgbutton
+  position: absolute
+  width: 180px
+  left: -2px
+  top: 176px
+  text-align: center
+  opacity: 0
+
+.imgcontainer:hover .imgbutton
+  opacity: 1
+
+.aa
+  width: 180px
+  padding: 14px 22px
+  text-align: center
+  color: white
+  border: solid 2px white
+  z-index: 1
+  border-radius: 10px
+  text-decoration: none
+  background: rgba(0, 0, 0, 0.3)
+  transition: opacity .35s ease
+  &:hover
+    background: rgba(0, 0, 0, 0.7)
+
+.titlebox
+  float: left
+  padding: 0 5px
+  margin: -310px 0 0 0px
+  background: #fff
+
+.dropdown
+  float: right
+  overflow: hidden
+  .dropbtn
+    cursor: pointer
+    font-size: 14px
+    font-style: bold
+    border: 2px solid transparent
+    outline: none
+    color: white
+    padding: 0px 16px
+    background-color: inherit
+
+.dropdown:hover .dropbtn
+  border: 2px solid white
+  border-radius: 10px
+
+.dropdown-content
+  overflow: hidden
+  display: none
+  position: absolute
+  background-color: #0068CB
+  min-width: 117px
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2)
+  z-index: 1
+  a
+    float: none
+    color: black
+    padding: 14px 16px
+    text-decoration: none
+    display: block
+    text-align: left
+    &:hover
+      background-color: #0068CB
