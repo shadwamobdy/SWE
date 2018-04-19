@@ -32,6 +32,7 @@
   		<img style="border-radius: 10px; border: 2px solid #a1a4a8;" src=<%= asset_path 'book.png' %>>
   		<p align="center">Book Title</p>
   	</div>
+
 </div>
 
 <div align="center" class="mytextdiv" style="width: 1080px;">
@@ -86,4 +87,36 @@
   		<img style="border-radius: 10px; border: 2px solid #a1a4a8;" src=<%= asset_path 'book.png' %>>
   		<p align="center">Book Title</p>
   	</div>
+</div>
+
+<div class="modal" id="loginForm">
+<!-- Modal content -->
+  <div class="modal-content">
+
+    <span class="close" onclick="hideLoginForm()">
+      &times;
+    </span>
+
+      <div class="loginFormContainer">
+        <div>
+          <label for="uname" style="color: #585858"><b>Username</b></label>
+        </div>
+        <input class="loginInput" type="text" placeholder="Enter Username" name="uname" required>
+
+        <div>
+          <label for="psw" style="color: #585858"><b>Password</b></label>
+        </div>
+        <input class="loginInput" type="password" placeholder="Enter Password" name="psw" required>
+
+        <div class="loginWrapper">
+          <input type="checkbox" checked="checked" name="remember" class="checkBox">
+          <label for="remember" style="color: #585858"> Remember me </label>
+        </div>
+
+        <div class="loginWrapper" >
+          <button class="button loginButton" type="submit">Login</button>
+        </div>
+      </div>
+
+  </div>
 </div>
