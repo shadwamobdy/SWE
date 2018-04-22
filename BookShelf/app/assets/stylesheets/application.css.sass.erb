@@ -35,10 +35,12 @@
   background-position: 8px 6px
   background-repeat: no-repeat
   font-size: 16px
+  border-radius: 10px
+  outline: none
   padding: 14px 20px 12px 45px
   border: none
   float: left
-  width: 200px
+  width: 300px
   height: 20px
   -webkit-transition: width 0.4s ease-in-out
   transition: width 0.4s ease-in-out
@@ -69,6 +71,7 @@ input
 
 .button
   color: white
+  border-radius: 10px
   background-color: transparent
   border: 2px solid transparent
   cursor: pointer
@@ -315,7 +318,7 @@ section
 .modal-content
   background-color: rgba(255, 255, 255, 0.8)
   margin: auto
-  padding: 20px
+  padding: 30px 36px
   border: none
   width: 30%
   text-align: left
@@ -490,10 +493,12 @@ section
 
 .loginInput
     width: 100%
-    padding: 12px 20px
+    padding: 8px 16px
     margin: 8px 0
     display: inline-block
+    outline: none
     border: 1px solid #ccc
+    border-radius: 10px
     box-sizing: border-box
 
 /* Set a style for all buttons
@@ -501,24 +506,23 @@ section
 .loginButton
   font-size: 18px
   color:  #0068CB
-  padding: 14px 20px
-  margin: 8px 0
+  padding: 10px 16px
+  margin: 8px auto
   cursor: pointer
-  width: 30%
+  width: 25%
+  clear: both
+  display: block
   border: 2px solid #0068CB
   border-radius: 10px
 
 .loginButton:hover
     border: 2px solid #0068CB
     border-radius: 10px
+    text-align: center
 
 /* Add padding to containers
 .loginWrapper
     text-align: center
-
-.loginFormContainer
-  padding: 16px
-
 
 .imgcontainer
   position: relative
@@ -573,37 +577,47 @@ section
   margin: -310px 0 0 0px
   background: #fff
 
-.dropdown
+.dropbtn
   float: right
   overflow: hidden
-  .dropbtn
-    cursor: pointer
-    font-size: 14px
-    font-style: bold
-    border: 2px solid transparent
-    outline: none
-    color: white
-    padding: 0px 16px
-    background-color: inherit
+  cursor: pointer
+  font-size: 14px
+  font-style: bold
+  border: 2px solid transparent
+  outline: none
+  color: white
+  padding: 0px 16px
+  background-color: #0068CB
 
-.dropdown:hover .dropbtn
+.dropbtn:hover
   border: 2px solid white
   border-radius: 10px
 
 .dropdown-content
-  overflow: hidden
-  display: none
+  overflow: none
+  background: white
+  background-repeat: no-repeat
+  background-attachment: fixed
+  border-radius: 10px
   position: absolute
-  background-color: #0068CB
   min-width: 117px
+  right: 30px
+  top: 38px
+  color: #0068CB
   box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2)
   z-index: 1
+  float: none
+  text-decoration: none
+  display: none
+  text-align: left
   a
     float: none
-    color: black
-    padding: 14px 16px
+    color: #0068CB
+    padding: 10px 12px
     text-decoration: none
     display: block
     text-align: left
     &:hover
       background-color: #0068CB
+      border-radius: 10px
+      color: white

@@ -49,6 +49,20 @@ window.onclick = function(e) {
         && (e.target != viewBookBtn1) && (e.target != viewBookBtn2)) {
         document.getElementById('viewBook').style.display = "none";
     }
+    var logOutDropdown = document.getElementById("logOutDropdown");
+    var dropBtn = document.getElementById("dropBtn");
+    if ((logOutDropdown != null) && (e.target != logOutDropdown) && (e.target.parentElement != logOutDropdown)
+        && (e.target != dropBtn) && (e.target != dropBtn)) {
+        document.getElementById('logOutDropdown').style.display = "none";
+        document.getElementById("dropBtn").style.backgroundColor = "#0068CB";
+        document.getElementById("dropBtn").style.color = "white";
+    }
+    var addBookContent = document.getElementById("addBookContent");
+    var addBookBtn = document.getElementById("addBookBtn");
+    if ((addBookContent != null) && (e.target != addBookContent) && (e.target.parentElement != addBookContent)
+        && (e.target != addBookBtn) && (e.target != addBookBtn)) {
+        document.getElementById('addBook').style.display = "none";
+    }
 }
 
 function showLoginForm() {
@@ -75,7 +89,15 @@ function hideAddBook() {
     document.getElementById("addBook").style.display = "none";
 }
 
-function showDropdown() {
-    alert("hopaaaaaaaaaaa");
-    document.getElementById("myDropdown").style.display = "block";
+function toggleDropdown() {
+    if($('#logOutDropdown:visible').length == 0) {
+        document.getElementById("logOutDropdown").style.display = "block";
+        document.getElementById("dropBtn").style.backgroundColor = "white";
+        document.getElementById("dropBtn").style.color = "#0068CB";
+        document.getElementById("dropBtn").style.borderRadius = "10px";
+    } else {
+        document.getElementById("logOutDropdown").style.display = "none";
+        document.getElementById("dropBtn").style.backgroundColor = "#0068CB";
+        document.getElementById("dropBtn").style.color = "white";
+    }
 }

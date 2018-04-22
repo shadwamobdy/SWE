@@ -26,12 +26,11 @@
 		            	    	login as admin
 		            	    </button>
 		            	<% else %>
-		            		<div class="dropdown">
-						    	<button class="dropbtn" onclick="showDropdown()">Admin Name</button>
-						    	<div class="dropdown-content" id="myDropdown">
-						      		<button class="dropbtn">log out</button">
-						    	</div>
-						  	</div>
+		            		<button class="dropbtn" id="dropBtn" onclick="toggleDropdown()">Admin Name</button>
+					    	<div class="dropdown-content" id="logOutDropdown">
+					      		<%= link_to "Add admin", "/home/admin" %>
+					      		<%= link_to "log out", "/home/admin" %>
+					    	</div>
 		            	<% end %>
 	            	</ul>
 	        	</div>

@@ -6,23 +6,13 @@
 	    <span class="close" onclick="hideLoginForm()">
 	      	&times;
 	    </span>
-      	<div class="loginFormContainer">
-	        <div>
-	          	<label for="uname" style="color: #585858"><b>Username</b></label>
-	        </div>
-	        <input class="loginInput" type="text" placeholder="Enter Username" name="uname" required>
-	        <div>
-	          	<label for="psw" style="color: #585858"><b>Password</b></label>
-	        </div>
-    		<input class="loginInput" type="password" placeholder="Enter Password" name="psw" required>
-	        <div class="loginWrapper">
-	          	<input type="checkbox" checked="checked" name="remember" class="checkBox">
-	          	<label for="remember" style="color: #585858"> Remember me </label>
-	        </div>
-	        <div class="loginWrapper" >
-	          	<button class="button loginButton" type="submit">Login</button>
-	        </div>
-      	</div>
+       	<label for="uname" style="color: #585858; font-style: bold;">Username</label>
+        <input class="loginInput" type="text" placeholder="Enter Username" name="uname" required>
+       	<label for="psw" style="color: #585858; font-style: bold;">Password</label>
+		<input class="loginInput" type="password" placeholder="Enter Password" name="psw" required>
+      	<input type="checkbox" checked="checked" name="remember" class="checkBox" style="float: right; position:relative; left: -65%;">
+      	<label for="remember" style="color: #585858; float: right; position: relative; left: -30%;">Remember me</label>
+        <button class="button loginButton" type="submit">Login</button>
   	</div>
 </div>
 
