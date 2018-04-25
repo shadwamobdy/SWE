@@ -73,8 +73,8 @@ function hideLoginForm() {
   document.getElementById("loginForm").style.display = "none";
 }
 
-function showBook() {
-    document.getElementById("viewBook").style.display = "block";
+function showBook(id) {
+    document.getElementById('book_' + id).style.display = "block";
 }
 
 function hideBook() {

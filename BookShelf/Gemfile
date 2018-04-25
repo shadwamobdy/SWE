@@ -68,6 +68,7 @@ gem 'twitter-bootstrap-rails'
 gem "select2-rails"
 gem "sprockets-sass",    "~> 0.5"
 gem "sprockets-helpers", "~> 0.2"
+gem "googlebooks", "~> 0.0.9"
 
 end
 
