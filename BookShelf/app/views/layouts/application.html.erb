@@ -17,21 +17,29 @@
 	            	</div>
 		        </div>
 		        <%= form_tag("/home/search", method: "get") do %>
-					<input type="text" placeholder="Search.." id="search" name="search" required="true" style="margin: 15px 100px;">
+					<input type="text" placeholder="Search.." id="search" class="search" name="search" required="true" style="margin: 15px 100px;">
 			  	<% end %>
 	    	    <div>
 	        	    <ul class="nav pull-right", style="padding: 15px 15px">
-	        	    	<%# if !(user_signed_in?) %>
-		            	    <button class="button">
+	        	    	<% if !(@admin) %>
+		            	    <button id="logInBtn" class="button" onclick="showLoginForm()">
 		            	    	login as admin
 		            	    </button>
+		            	<% else %>
+		            		<button class="dropbtn" id="dropBtn" onclick="toggleDropdown()">Admin Name</button>
+					    	<div class="dropdown-content" id="logOutDropdown">
+					      		<%= link_to "Add admin", "/home/admin" %>
+					      		<%= link_to "log out", "/home/admin" %>
+					    	</div>
+		            	<% end %>
 	            	</ul>
 	        	</div>
 	    	</div>
 		</nav>
 </head>
-<body>
 
+<body>
+  
 <%= yield %>
 
 </body>

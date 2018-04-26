@@ -1,0 +1,11 @@
+<%= render "shared/form_home" %>
+
+<button type="button" id="addBookBtn" style="position: fixed; right: 100px; bottom: 40px; outline: none;" class="btn btn-danger btn-circle" onclick="showAddBook()"><i class="fa fa-plus"></i></button>
+<div class="modal-add-book" id="addBook">
+    <div class="modal-book-content" id="addBookContent">
+        <span class="close" onclick="hideAddBook()">
+            &times;
+        </span>
+        <%= render "shared/form_add_book" %>
+    </div>
+</div>

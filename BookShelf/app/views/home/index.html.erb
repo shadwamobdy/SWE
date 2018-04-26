@@ -1,10 +1,18 @@
-<div class="mytextdiv" style="width: 1050px;">
-  	<div class="mytexttitle">
-  		<span style="font-size:16px; margin: 0px 5px; border: 1px solid #e7e7e7; padding: 5px 8px; border-radius: 5px; padding-left: 2px;" class="hidden-xs showopacity glyphicon glyphicon-send"></span>
-    	Category  
-  	</div>
-  	<div class="divider"></div>
-</div>
-<div>
-	
-</div>
+<%= render "shared/form_home" %>
+<form>
+    <div class="modal" id="loginForm">
+    <!-- Modal content -->
+      	<div class="modal-content" id="loginContent">
+    	    <span class="close" onclick="hideLoginForm()">
+    	      	&times;
+    	    </span>
+            <label for="uname" style="color: #585858; font-style: bold;">Username</label>
+            <input class="loginInput" type="text" placeholder="Enter Username" name="uname" required>
+            <label for="psw" style="color: #585858; font-style: bold;">Password</label>
+            <input class="loginInput" type="password" placeholder="Enter Password" name="psw" required>
+            <input type="checkbox" checked="checked" name="remember" class="checkBox" style="float: right; position:relative; left: -65%;">
+            <label for="remember" style="color: #585858; float: right; position: relative; left: -30%;">Remember me</label>
+            <button class="button loginButton" type="submit">Login</button> 
+      	</div>
+    </div>
+</form>
