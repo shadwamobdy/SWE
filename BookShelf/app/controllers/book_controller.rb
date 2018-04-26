@@ -1,7 +1,7 @@
 class BookController < ApplicationController
 
 	def show
-		@book = Book.find(params[:id])
+		#@book = Book.find(params[:id])
 	end
 
 	def new
@@ -10,9 +10,7 @@ class BookController < ApplicationController
 
 	def create
 		@book = Book.new(book_params)
-		if @book.save!
-		elsif 
-		end
+		
 	end
 
 	private 

@@ -77,8 +77,8 @@ function showBook(id) {
     document.getElementById('book_' + id).style.display = "block";
 }
 
-function hideBook() {
-    document.getElementById("viewBook").style.display = "none";
+function hideBook(id) {
+    document.getElementById('book_' + id).style.display = "none";
 }
 
 function showAddBook() {

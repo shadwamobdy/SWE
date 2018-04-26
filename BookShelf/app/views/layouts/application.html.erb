@@ -19,18 +19,24 @@
 		        <%= form_tag("/home/search", method: "get") do %>
 					<input type="text" placeholder="Search.." id="search" class="search" name="search" required="true" style="margin: 15px 100px;">
 			  	<% end %>
+			  	<% if false %>
+				  	<%= link_to new_user_path, class: 'btn btn-primary btn-lg' do %>
+				        Sign Up &raquo;
+				    <% end %>
+			    <% end %>
 	    	    <div>
 	        	    <ul class="nav pull-right", style="padding: 15px 15px">
-	        	    	<% if !(@admin) %>
-		            	    <button id="logInBtn" class="button" onclick="showLoginForm()">
-		            	    	login as admin
-		            	    </button>
-		            	<% else %>
-		            		<button class="dropbtn" id="dropBtn" onclick="toggleDropdown()">Admin Name</button>
+	        	    	<% if current_user %>
+	        	    		<button class="dropbtn" id="dropBtn" onclick="toggleDropdown()">
+	        	    			<%= current_user.user_name%> </button>
 					    	<div class="dropdown-content" id="logOutDropdown">
 					      		<%= link_to "Add admin", "/home/admin" %>
-					      		<%= link_to "log out", "/home/admin" %>
+					      		<%= link_to "log out", sign_out_path, method: :delete %>
 					    	</div>
+				    	<% else %>
+				    		<button id="logInBtn" class="button" onclick="showLoginForm()">
+		            	    	login as admin
+		            	    </button>
 		            	<% end %>
 	            	</ul>
 	        	</div>

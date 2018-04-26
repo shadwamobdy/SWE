@@ -1,27 +1,19 @@
 <%= render "shared/form_home" %>
-
-<div class="modal" id="loginForm">
-<!-- Modal content -->
-  	<div class="modal-content" id="loginContent">
-	    <span class="close" onclick="hideLoginForm()">
-	      	&times;
-	    </span>
-       	<label for="uname" style="color: #585858; font-style: bold;">Username</label>
-        <input class="loginInput" type="text" placeholder="Enter Username" name="uname" required>
-       	<label for="psw" style="color: #585858; font-style: bold;">Password</label>
-		<input class="loginInput" type="password" placeholder="Enter Password" name="psw" required>
-      	<input type="checkbox" checked="checked" name="remember" class="checkBox" style="float: right; position:relative; left: -65%;">
-      	<label for="remember" style="color: #585858; float: right; position: relative; left: -30%;">Remember me</label>
-        <button class="button loginButton" type="submit">Login</button>
-  	</div>
-</div>
-
-<div class="modal" id="viewBook">
-<!-- Modal content -->
-  	<div class="modal-book-content" id="viewBookContent">
-    	<span class="close" onclick="hideBook()">
-      		&times;
-    	</span>
-    	<%= render "shared/form_show_book" %>
-  	</div>
-</div>
+<%= form_for @user_session do |f| %>
+    <div class="modal" id="loginForm">
+    <!-- Modal content -->
+        <div class="modal-content" id="loginContent">
+            <span class="close" onclick="hideLoginForm()">
+                &times;
+            </span>
+            <%= render 'shared/errors', object: @user_session %>
+            <%= f.label :email , class: 'labelInput' %>
+            <%= f.email_field :email, required: true, placeholder: 'Enter Email', class: 'loginInput' %>
+            <%= f.label :password, class: 'labelInput'%>
+            <%= f.password_field :password, required: true, placeholder: 'Enter Password', class: 'loginInput' %>
+            <%= f.check_box :remember_me, style: "float: right; position:relative; left: -65%;", class: 'checkBox' %>
+            <%= f.label :remember_me , class: 'labelRemember' %>
+            <%= f.submit "Login", style: 'font-size: 18px; height: 100%; color:  #0068CB; border-color: #0068CB;', class: ' button loginButton' %>
+      	</div>
+    </div>
+<% end %>

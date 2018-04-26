@@ -3,6 +3,7 @@ class HomeController < ApplicationController
 	before_filter :admin
   
   	def index
+      @user_session = UserSession.new
   		@books = Hash.new
   		@categories = ["Art", "Sports", "Business", "Advanture", "Poetry", "Economics", "Science", "Fiction",
   		 			   "Education", "Computers", "Language", "Philosophy"]
@@ -11,6 +12,7 @@ class HomeController < ApplicationController
   			@books[c] = Book.where(category: c)
   			if !@books[c].any?
   				@books[c] = GoogleBooks.search("subject: #{c}")
+  				puts "----------------------> size #{@books[c].any?} category #{c}"
   				@books[c].each do |b|
   					book = Book.new(:title => b.title, :description => b.description, :image_link => b.image_link, :category => c)
   					if !book.save!
@@ -22,6 +24,13 @@ class HomeController < ApplicationController
   	end
 
   	def search
+  		filter = params[:filter]
+  		if !(filter)
+  			
+  		else
+  			 
+  		end
+  			
   	end
 
   	def admin
