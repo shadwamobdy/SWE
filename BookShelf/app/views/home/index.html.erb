@@ -1,27 +1,18 @@
 <%= render "shared/form_home" %>
-
-<div class="modal" id="loginForm">
-<!-- Modal content -->
-  	<div class="modal-content" id="loginContent">
-	    <span class="close" onclick="hideLoginForm()">
-	      	&times;
-	    </span>
-       	<label for="uname" style="color: #585858; font-style: bold;">Username</label>
-        <input class="loginInput" type="text" placeholder="Enter Username" name="uname" required>
-       	<label for="psw" style="color: #585858; font-style: bold;">Password</label>
-		<input class="loginInput" type="password" placeholder="Enter Password" name="psw" required>
-      	<input type="checkbox" checked="checked" name="remember" class="checkBox" style="float: right; position:relative; left: -65%;">
-      	<label for="remember" style="color: #585858; float: right; position: relative; left: -30%;">Remember me</label>
-        <button class="button loginButton" type="submit">Login</button>
-  	</div>
-</div>
-
-<div class="modal" id="viewBook">
-<!-- Modal content -->
-  	<div class="modal-book-content" id="viewBookContent">
-    	<span class="close" onclick="hideBook()">
-      		&times;
-    	</span>
-    	<%= render "shared/form_show_book" %>
-  	</div>
-</div>
+<form>
+    <div class="modal" id="loginForm">
+    <!-- Modal content -->
+      	<div class="modal-content" id="loginContent">
+    	    <span class="close" onclick="hideLoginForm()">
+    	      	&times;
+    	    </span>
+            <label for="uname" style="color: #585858; font-style: bold;">Username</label>
+            <input class="loginInput" type="text" placeholder="Enter Username" name="uname" required>
+            <label for="psw" style="color: #585858; font-style: bold;">Password</label>
+            <input class="loginInput" type="password" placeholder="Enter Password" name="psw" required>
+            <input type="checkbox" checked="checked" name="remember" class="checkBox" style="float: right; position:relative; left: -65%;">
+            <label for="remember" style="color: #585858; float: right; position: relative; left: -30%;">Remember me</label>
+            <button class="button loginButton" type="submit">Login</button> 
+      	</div>
+    </div>
+</form>
