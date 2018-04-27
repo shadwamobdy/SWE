@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   get 'home/index'
+  get 'home/search', as: 'search'
   get 'home/admin'
   get 'newBook' => 'book#new'
   get 'editBook' => 'book#edit'

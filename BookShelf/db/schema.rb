@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180425134723) do
+ActiveRecord::Schema.define(version: 20180427231358) do
 
   create_table "books", force: :cascade do |t|
     t.string   "title"
@@ -20,6 +20,9 @@ ActiveRecord::Schema.define(version: 20180425134723) do
     t.string   "image_link"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
+    t.string   "isbn"
   end
+
+  add_index "books", ["isbn"], name: "index_books_on_isbn", unique: true
 
 end
