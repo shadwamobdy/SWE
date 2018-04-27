@@ -18,6 +18,7 @@
 		        </div>
 		        <%= form_tag("/home/search", method: "get") do %>
 					<input type="text" placeholder="Search.." id="search" class="search" name="search" required="true" style="margin: 15px 100px;">
+					<input type="hidden" name="filter" value="name" />
 			  	<% end %>
 	    	    <div>
 	        	    <ul class="nav pull-right", style="padding: 15px 15px">

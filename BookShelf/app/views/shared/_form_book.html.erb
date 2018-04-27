@@ -1,0 +1,26 @@
+<div style="display: inline-block;">
+    <div class="imgcontainer">
+        <% if book.image_link? %>
+            <img style="height: 215px; width: 170px;" src=<%= book.image_link %>>
+        <% else%>
+            <img style="height: 215px; width: 170px;" src=<%= asset_path 'book.png' %>>
+        <% end %>
+        <div class="imgbutton" onclick="showBook(<%= book.id %>);">
+            <button class="aa" id="viewBookBtn1">view details</button>
+        </div>
+    </div>
+    <div align="center" class="title">
+        <%= book.title %>
+        <span>
+            <%= book.title %>
+        </span>        
+    </div>
+</div>
+<%= div_for book, :class => "modal" do %>
+    <div class="modal-book-content">
+        <span class="close" onclick="hideBook(<%= book.id %>)">
+            &times;
+        </span>
+        <%= render "shared/form_show_book", :book => book %>
+    </div>
+<% end %>

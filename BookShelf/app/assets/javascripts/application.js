@@ -101,3 +101,18 @@ function toggleDropdown() {
         document.getElementById("dropBtn").style.color = "white";
     }
 }
+
+$(function() {
+    document.getElementById("search").keypress(function(e) {
+        // Enter pressed? 
+        if ($(this).val().length != 0) {
+            if((e.which == 10 || e.which == 13)) {
+                this.form.submit();
+            }
+        }
+    });
+});
+
+function switchCategory() {
+    document.getElementById("category").form.submit();
+}
