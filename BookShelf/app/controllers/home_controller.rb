@@ -33,9 +33,10 @@ class HomeController < ApplicationController
   	end
 
   	def search
-  		filter = params[:filter]
+  		@admin = false
+  		@filter = params[:filter]
   		@attribute = params[:search]
-  		if filter == "name"
+  		if @filter == "name"
   			if not Book.exists?(["lower(title) like ?", "%#{@attribute.downcase}%"])
   				books = GoogleBooks.search("intitle: #{@attribute}", {:count => 30})
   				books.each do |b|
@@ -56,7 +57,7 @@ class HomeController < ApplicationController
   				end
   			end
   			@books = Book.where("lower(title) like ?", "%#{@attribute.downcase}%")
-  		elsif filter == "category"
+  		elsif @filter == "category"
   			if not Book.exists?(["lower(category) like ?", "%#{@attribute.downcase}%"])
   				books = GoogleBooks.search("subject: #{@attribute}", {:count => 30})
   				books.each do |b|

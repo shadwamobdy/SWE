@@ -6,7 +6,7 @@ class BookTest < ActiveSupport::TestCase
   # end
 
 def setup
-	@book = Book.new(isbn: "123456", created_at: "2018-04-26 14:53:04.539940", updated_at: "2018-04-26 14:53:04.539940")
+	@book = Book.new(isbn: "123458", created_at: "2018-04-26 14:53:04.539940", updated_at: "2018-04-26 14:53:04.539940")
 end
 
 test "book should be valid" do
