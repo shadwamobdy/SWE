@@ -22,8 +22,15 @@
                                     <table class="table table-striped">
                                         <tbody>
                                             <tr>
-                                                <td>Book Authers</td>
-                                                <td>authers</td>
+                                                <td>Book Auther(s)</td>
+                                                <td>
+                                                    <% book.authors.each do |a| %>
+                                                        <%= a.name %>
+                                                        <% if not a == book.authors.last %>
+                                                        , 
+                                                        <% end %>
+                                                    <% end %>
+                                                </td>
                                             </tr>
                                             <tr>
                                                 <td>Book Category</td>
