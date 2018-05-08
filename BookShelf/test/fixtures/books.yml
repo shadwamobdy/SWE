@@ -1,13 +1,15 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
+  isbn: 123456
   title: MyString
   category: MyString
   description: MyText
-  image: MyString
+  image_link: MyString
 
 two:
+  isbn: 123457
   title: MyString
   category: MyString
   description: MyText
-  image: MyString
+  image_link: MyString

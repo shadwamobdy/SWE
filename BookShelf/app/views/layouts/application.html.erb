@@ -13,28 +13,31 @@
 	            		<img src=<%= asset_path 'logo.png' %>>
 	            	</a>
 	            	<div style="margin: 10px 2px; float: left;">
-	            		<b style="color: white; font-size: 180%;">BookShelf</b>
+	            		<%= link_to "BookShelf", root_path, :style => "color: white; font-size: 180%; text-decoration: none;" %>
 	            	</div>
 		        </div>
 		        <%= form_tag("/home/search", method: "get") do %>
 					<input type="text" placeholder="Search.." id="search" class="search" name="search" required="true" style="margin: 15px 100px;">
+					<input type="hidden" name="filter" value="name" />
 			  	<% end %>
-			  	<% if false %>
-				  	<%= link_to new_user_path, class: 'btn btn-primary btn-lg' do %>
-				        Sign Up &raquo;
-				    <% end %>
-			    <% end %>
+			  	<div class="nav pull-right", style="padding: 15px 15px">
+			  		<% if false %>
+					  	<%= link_to new_user_path, class: 'button' do %>
+					        Sign up &raquo;
+					    <% end %>
+			    	<% end %>
+			  	</div>
 	    	    <div>
 	        	    <ul class="nav pull-right", style="padding: 15px 15px">
 	        	    	<% if current_user %>
 	        	    		<button class="dropbtn" id="dropBtn" onclick="toggleDropdown()">
 	        	    			<%= current_user.user_name%> </button>
 					    	<div class="dropdown-content" id="logOutDropdown">
-					      		<%= link_to "Add admin", "/home/admin" %>
+					      		<%= link_to "Add admin", admin_path %>
 					      		<%= link_to "log out", sign_out_path, method: :delete %>
 					    	</div>
-				    	<% else %>
-				    		<button id="logInBtn" class="button" onclick="showLoginForm()">
+					    <% else %>
+		            	    <button id="logInBtn" class="button" onclick="showLoginForm()">
 		            	    	login as admin
 		            	    </button>
 		            	<% end %>

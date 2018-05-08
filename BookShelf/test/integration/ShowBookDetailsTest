@@ -1,0 +1,13 @@
+require 'test_helper'
+
+class ShowBookDetailsTest < ActionDispatch::IntegerationTest
+
+	#test "show selected book details" do 
+	#	get 'home/index'
+	#	assert_template 'home/index'
+		
+	#end
+
+
+
+end	

@@ -10,12 +10,11 @@ class BookController < ApplicationController
 
 	def create
 		@book = Book.new(book_params)
-		
 	end
 
 	private 
 		def book_params
-			params[:book].permit(:title, :description, :image, :category)
+			params[:book].permit(:isbn, :title, :description, :image, :category)
 		end
 
 end

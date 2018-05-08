@@ -5,27 +5,7 @@
             <%= category %>
         </div>
         <% @books[category].each do |book| %>
-            <div>
-                <div class="imgcontainer">
-                    <% if book.image_link? %>
-                        <img style="height: 215px; width: 170px;" src=<%= book.image_link %>>
-                    <% else%>
-                        <img src=<%= asset_path 'book.png' %>>
-                    <% end %>
-                    <div class="imgbutton" onclick="showBook(<%= book.id %>);">
-                        <button class="aa" id="viewBookBtn1">view details</button>
-                    </div>
-                </div>
-                <p align="center" style="width: 180px; text-overflow: ellipsis; white-space: nowrap; overflow: hidden;"><%= book.title %></p>
-            </div>
-            <%= div_for book, :class => "modal" do %>
-                <div class="modal-book-content">
-                    <span class="close" onclick="hideBook(<%= book.id %>)">
-                        &times;
-                    </span>
-                    <%= render "shared/form_show_book", :book => book %>
-                </div>
-            <% end %>
+            <%= render "shared/form_book", :book => book %>
         <% end %>
     </div>
 <% end %>

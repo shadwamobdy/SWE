@@ -11,7 +11,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180426120610) do
+ActiveRecord::Schema.define(version: 20180507104314) do
+
+  create_table "authers", force: :cascade do |t|
+    t.string   "name"
+    t.integer  "book_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "authers", ["book_id", "name"], name: "index_authers_on_book_id_and_name", unique: true
+  add_index "authers", ["book_id"], name: "index_authers_on_book_id"
 
   create_table "books", force: :cascade do |t|
     t.string   "title"
@@ -20,11 +30,14 @@ ActiveRecord::Schema.define(version: 20180426120610) do
     t.string   "image_link"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
+    t.string   "isbn",        null: false
   end
 
+  add_index "books", ["isbn"], name: "index_books_on_isbn", unique: true
+
   create_table "users", force: :cascade do |t|
-    t.string   "user_name"
     t.string   "email"
+    t.string   "user_name"
     t.string   "crypted_password"
     t.string   "password_salt"
     t.string   "persistence_token"

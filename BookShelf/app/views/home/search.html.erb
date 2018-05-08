@@ -1,0 +1,21 @@
+<div style="width: 1250px; padding: 40px 30px; margin: 0px 15px;">
+    <p style="color: #585858; font-size: 14pt; margin-left: 10px;">Results for books with <%= @filter %> is " <%= @attribute %> ":</p>
+    <div align="center" style="margin: 15px 0px;">
+        <%= form_tag("/home/search", method: "get") do %>
+            <input type="hidden" name="filter" value="category"/>
+            <input type="hidden" name="search" value="<%= @attribute %>" />
+            <button type="button" id="category" class="btn-category" onclick="switchCategory()">
+                <% if @filter == "category" %>
+                    <span>Name</span>
+                    <i class="fa fa-font fa-2x" style="margin: 2px 2px;"></i>
+                <% else %>
+                    <span>Category</span>
+                    <i class="fa fa-stack-exchange fa-2x" style="margin: 2px 2px;"></i>
+                <% end %>
+            </button>
+        <% end %>
+        <% @books.each do |book| %>
+            <%= render "shared/form_book", :book => book %>
+        <% end %>
+    </div>
+</div>
