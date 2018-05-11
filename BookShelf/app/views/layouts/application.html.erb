@@ -13,42 +13,37 @@
 	            		<img src=<%= asset_path 'logo.png' %>>
 	            	</a>
 	            	<div style="margin: 10px 2px; float: left;">
-	            		<%= link_to "BookShelf", root_path, :style => "color: white; font-size: 180%; text-decoration: none;" %>
+	            		<% if current_user %>
+	            			<%= link_to "BookShelf", admin_path, :style => "color: white; font-size: 180%; text-decoration: none;" %>
+	            		<% else %>
+	            			<%= link_to "BookShelf", root_path, :style => "color: white; font-size: 180%; text-decoration: none;" %>
+	            		<% end %>
 	            	</div>
 		        </div>
 		        <%= form_tag("/home/search", method: "get") do %>
 					<input type="text" placeholder="Search.." id="search" class="search" name="search" required="true" style="margin: 15px 100px;">
 					<input type="hidden" name="filter" value="name" />
 			  	<% end %>
+			  	<div class="nav pull-right", style="padding: 15px 15px">
+			  		<% if false %>
+					  	<%= link_to new_user_path, class: 'button' do %>
+					        Sign up &raquo;
+					    <% end %>
+			    	<% end %>
+			  	</div>
 	    	    <div>
 	        	    <ul class="nav pull-right", style="padding: 15px 15px">
-	        	    	<% if !(@admin) %>
+	        	    	<% if current_user %>
+	        	    		<button class="dropbtn" id="dropBtn" onclick="toggleDropdown()">
+	        	    			<%= current_user.user_name%> </button>
+					    	<div class="dropdown-content" id="logOutDropdown">
+					      		<%= link_to "Add admin", admin_path %>
+					      		<%= link_to "log out", sign_out_path, method: :delete %>
+					    	</div>
+					    <% else %>
 		            	    <button id="logInBtn" class="button" onclick="showLoginForm()">
 		            	    	login as admin
 		            	    </button>
-		            	    <form>
-							    <div class="modal" id="loginForm">
-							    <!-- Modal content -->
-							      	<div class="modal-content" id="loginContent">
-							    	    <span class="close" onclick="hideLoginForm()">
-							    	      	&times;
-							    	    </span>
-							            <label for="uname" style="color: #585858; font-style: bold;">Username</label>
-							            <input class="loginInput" type="text" placeholder="Enter Username" name="uname" required>
-							            <label for="psw" style="color: #585858; font-style: bold;">Password</label>
-							            <input class="loginInput" type="password" placeholder="Enter Password" name="psw" required>
-							            <input type="checkbox" checked="checked" name="remember" class="checkBox" style="float: right; position:relative; left: -65%;">
-							            <label for="remember" style="color: #585858; float: right; position: relative; left: -30%;">Remember me</label>
-							            <button class="button loginButton" type="submit">Login</button> 
-							      	</div>
-							    </div>
-							</form>
-		            	<% else %>
-		            		<button class="dropbtn" id="dropBtn" onclick="toggleDropdown()">Admin Name</button>
-					    	<div class="dropdown-content" id="logOutDropdown">
-					      		<%= link_to "Add admin", "/home/admin" %>
-					      		<%= link_to "log out", "/home/admin" %>
-					    	</div>
 		            	<% end %>
 	            	</ul>
 	        	</div>

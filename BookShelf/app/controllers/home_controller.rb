@@ -3,6 +3,7 @@ class HomeController < ApplicationController
 	before_filter :admin
   
   	def index
+      @user_session = UserSession.new
   		@books = Hash.new
   		@categories = ["Art", "Sports", "Business", "Advanture", "Poetry", "Economics", "Science", "Fiction",
   		 			   "Education", "Computers", "Language", "Philosophy"]
@@ -82,7 +83,8 @@ class HomeController < ApplicationController
   	end
 
   	def admin
-  		@admin = true
+  		@book = Book.new
+        @authors = Auther.all
         @books = Hash.new
         @categories = ["Art", "Sports", "Business", "Advanture", "Poetry", "Economics", "Science", "Fiction",
                        "Education", "Computers", "Language", "Philosophy"]

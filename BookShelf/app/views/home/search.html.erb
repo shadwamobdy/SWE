@@ -2,13 +2,14 @@
     <p style="color: #585858; font-size: 14pt; margin-left: 10px;">Results for books with <%= @filter %> is " <%= @attribute %> ":</p>
     <div align="center" style="margin: 15px 0px;">
         <%= form_tag("/home/search", method: "get") do %>
-            <input type="hidden" name="filter" value="category"/>
             <input type="hidden" name="search" value="<%= @attribute %>" />
             <button type="button" id="category" class="btn-category" onclick="switchCategory()">
                 <% if @filter == "category" %>
+                    <input type="hidden" name="filter" value="name"/>
                     <span>Name</span>
                     <i class="fa fa-font fa-2x" style="margin: 2px 2px;"></i>
                 <% else %>
+                    <input type="hidden" name="filter" value="category"/>
                     <span>Category</span>
                     <i class="fa fa-stack-exchange fa-2x" style="margin: 2px 2px;"></i>
                 <% end %>
