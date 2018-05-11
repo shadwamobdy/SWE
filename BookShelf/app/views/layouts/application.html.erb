@@ -13,7 +13,11 @@
 	            		<img src=<%= asset_path 'logo.png' %>>
 	            	</a>
 	            	<div style="margin: 10px 2px; float: left;">
-	            		<%= link_to "BookShelf", root_path, :style => "color: white; font-size: 180%; text-decoration: none;" %>
+	            		<% if current_user %>
+	            			<%= link_to "BookShelf", admin_path, :style => "color: white; font-size: 180%; text-decoration: none;" %>
+	            		<% else %>
+	            			<%= link_to "BookShelf", root_path, :style => "color: white; font-size: 180%; text-decoration: none;" %>
+	            		<% end %>
 	            	</div>
 		        </div>
 		        <%= form_tag("/home/search", method: "get") do %>

@@ -24,14 +24,4 @@ test "book ISBN should be unique" do
 	assert_not book2.valid?
 end
 
-test "book created_at should be present" do
-	@book.created_at = " "
-	assert_not @book.valid?
-end
-
-test "book updated_at should be present" do
-	@book.updated_at = " "
-	assert_not @book.valid?
-end
-
 end

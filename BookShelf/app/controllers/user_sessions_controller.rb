@@ -9,7 +9,7 @@ class UserSessionsController < ApplicationController
       flash[:success] = "Welcome back!"
       redirect_to admin_path
     else
-      render :new
+      redirect_to root_path
     end
   end
 

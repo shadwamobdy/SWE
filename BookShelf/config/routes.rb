@@ -8,6 +8,8 @@ Rails.application.routes.draw do
   get 'book' => 'book#show'
   root 'home#index'
 
+  resources :books
+
   resources :users, only: [:new, :create]
 
   resources :user_sessions, only: [:create, :destroy]
