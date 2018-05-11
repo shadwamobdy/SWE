@@ -19,6 +19,9 @@
  *= require jquery.fileupload-ui
  *= require select2
  *= require select2-bootstrap
+ *= require chosen
+ *= require selectize
+ *= require selectize.default
  *
  */
 
@@ -47,16 +50,6 @@
 
 .search:focus
   width: 50%
-
-input
-  &[type="submit"]
-    font-size: 100%
-    height: 25px
-    width: 90px
-    color: darkorange
-    background: transparent
-    border-color: darkorange
-
 
 .button__badge
   background-color: #fa3e3e
@@ -628,6 +621,8 @@ section
   text-overflow: ellipsis
   white-space: nowrap
   overflow: hidden
+  span
+    display: none
 
 .title:hover
   span

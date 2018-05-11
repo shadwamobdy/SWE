@@ -21,6 +21,8 @@
 //= require fullcalendar
 //= require jquery-fileupload
 //= require select2-full
+//= require chosen-jquery
+//= require selectize
 
 
 $(function() {
@@ -57,13 +59,20 @@ window.onclick = function(e) {
         document.getElementById("dropBtn").style.backgroundColor = "#0068CB";
         document.getElementById("dropBtn").style.color = "white";
     }
-    var addBookContent = document.getElementById("addBookContent");
-    var addBookBtn = document.getElementById("addBookBtn");
-    if ((addBookContent != null) && (e.target != addBookContent) && (e.target.parentElement != addBookContent)
-        && (e.target != addBookBtn) && (e.target != addBookBtn)) {
-        document.getElementById('addBook').style.display = "none";
-    }
+    // var addBookContent = document.getElementById("addBookContent");
+    // var addBookBtn = document.getElementById("addBookBtn");
+    // if ((addBookContent != null) && (e.target != addBookContent) && (e.target.parentElement != addBookContent)
+    //     && (e.target != addBookBtn) && (e.target != addBookBtn)) {
+    //     document.getElementById('addBook').style.display = "none";
+    // }
 }
+
+$(function() {
+    $('#authors_select').selectize({
+        create: true,
+        sortField: 'text'
+    });
+});
 
 function showLoginForm() {
     document.getElementById("loginForm").style.display = "block";

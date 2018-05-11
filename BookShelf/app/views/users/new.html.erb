@@ -1,0 +1,27 @@
+<div class="page-header"><h1>Register</h1></div>
+
+<%= form_for @user do |f| %>
+  <%= render 'shared/errors', object: @user %>
+
+  <div class="form-group">
+    <%= f.label :user_name %>
+    <%= f.text_field :user_name, class: 'form-control' %>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :email %>
+    <%= f.email_field :email, class: 'form-control' %>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :password %>
+    <%= f.password_field :password, class: 'form-control' %>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :password_confirmation %>
+    <%= f.password_field :password_confirmation, class: 'form-control' %>
+  </div>
+
+  <%= f.submit 'Sign up', style: 'font-size: 18px; height: 100%; color:  #0068CB; border-color: #0068CB;', class: ' button loginButton' %>
+<% end %>

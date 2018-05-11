@@ -47,7 +47,7 @@ group :development do
 
 
 # My gems
-gem "authlogic"
+gem 'authlogic', '3.4.6'
 
 # Bootstrap gem.
 gem 'bootstrap-sass', '~> 3.2.0'
@@ -69,6 +69,8 @@ gem "select2-rails"
 gem "sprockets-sass",    "~> 0.5"
 gem "sprockets-helpers", "~> 0.2"
 gem "googlebooks", "~> 0.0.9"
+gem 'chosen-rails'
+gem "selectize-rails"
 
 end
 
